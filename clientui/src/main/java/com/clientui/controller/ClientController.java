@@ -39,24 +39,21 @@ public class ClientController {
 
     Logger log = LoggerFactory.getLogger(getClass());
 
-    /*
-     * Étape (2)
-     * Opération qui récupère les détails d'un produit
-     * On passe l'objet "produit" récupéré et qui contient les détails en question à  FicheProduit.html
-     * */
     @RequestMapping("/suivi/{id}")
     public String suiviCommande(@PathVariable int id, Model model) {
 
         ExpeditionBean expeditionBean = expeditionProxy.getExpedition(id);
-        String status = getStatus(expeditionBean);
-        model.addAttribute("status", expeditionBean);
+        String etatCommande = getEtatCommande(expeditionBean.getEtat());
+
+        model.addAttribute("etatCommande", etatCommande);
+        model.addAttribute("idCommande", expeditionBean.getIdCommande());
 
         return "Suivi";
     }
 
-    private String getStatus(ExpeditionBean expeditionBean) {
+    private String getEtatCommande(int etat) {
         String status = "";
-        switch (expeditionBean.getEtat()) {
+        switch (etat) {
             case 0:
                 status = "En préparation";
                 break;

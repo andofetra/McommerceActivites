@@ -12,12 +12,12 @@ import javax.validation.constraints.NotNull;
 @RibbonClient(name = "microservice-expedition")
 public interface MicroserviceExpeditionProxy {
 
-    @PatchMapping("expedition")
-    ResponseEntity<ExpeditionBean> updateExpedition(@RequestBody @NotNull ExpeditionBean exp);
-
-    @PostMapping("expedition")
+    @PostMapping("/microservice-expedition/expedition")
     void addExpedition(@RequestBody @NotNull ExpeditionBean exp);
 
-    @GetMapping("expedition/{id}")
+    @GetMapping("/microservice-expedition/expedition/{id}")
     ExpeditionBean getExpedition(@PathVariable Integer id);
+
+    @PutMapping("/microservice-expedition/expedition")
+    ResponseEntity<ExpeditionBean> updateExpedition(@RequestBody @NotNull ExpeditionBean exp);
 }

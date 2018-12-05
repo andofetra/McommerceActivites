@@ -1,4 +1,4 @@
-package com.mexpedition.microserviceexpedition.web.exceptions;
+package com.mexpedition.web.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

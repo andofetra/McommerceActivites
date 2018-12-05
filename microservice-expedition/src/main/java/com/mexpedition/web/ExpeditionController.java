@@ -1,8 +1,8 @@
-package com.mexpedition.microserviceexpedition.web;
+package com.mexpedition.web;
 
-import com.mexpedition.microserviceexpedition.dao.ExpeditionDao;
-import com.mexpedition.microserviceexpedition.model.Expedition;
-import com.mexpedition.microserviceexpedition.web.exceptions.ExpeditionNotFoundException;
+import com.mexpedition.dao.ExpeditionDao;
+import com.mexpedition.model.Expedition;
+import com.mexpedition.web.exceptions.ExpeditionNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -24,7 +24,7 @@ public class ExpeditionController {
     }
 
     @GetMapping("expedition/{id}")
-    public Expedition getExpedition(@PathVariable Integer id) {
+    public Expedition getExpeditionById(@PathVariable Integer id) {
 
         Optional<Expedition> expedition = dao.findById(id);
 
@@ -35,7 +35,7 @@ public class ExpeditionController {
         throw new ExpeditionNotFoundException(id);
     }
 
-    @PatchMapping("expedition")
+    @PutMapping("expedition")
     public ResponseEntity<Expedition> updateExpedition(@RequestBody @NotNull Expedition exp) {
         Optional<Expedition> expeditionFromBDD = dao.findById(exp.getId());
 
