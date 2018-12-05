@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding">
+  <component name="Encoding" addBOMForNewFiles="with NO BOM">
     <file url="file://$PROJECT_DIR$/clientui" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/config-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-server" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-commandes" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-expedition" charset="UTF-8" />
-    <file url="file://$PROJECT_DIR$/microservice-expedition/src/main/resources/bootstrap.properties" charset="ISO-8859-1" />
+    <file url="file://$PROJECT_DIR$/microservice-expedition/src/main/resources/application.properties" charset="ISO-8859-1" />
     <file url="file://$PROJECT_DIR$/microservice-paiement" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-produits" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/microservice-produits/pom.xml" charset="ISO-8859-1" />
