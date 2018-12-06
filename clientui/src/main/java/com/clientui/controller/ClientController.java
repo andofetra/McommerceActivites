@@ -52,7 +52,7 @@ public class ClientController {
     }
 
     private String getEtatCommande(int etat) {
-        String status = "";
+        String status;
         switch (etat) {
             case 0:
                 status = "En préparation";
